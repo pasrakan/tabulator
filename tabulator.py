@@ -342,7 +342,7 @@ class Tabulator:
         covariates (list): A list of covariate variable names.
         covariate_types (list): A list of covariate variable types, either 'N', 'U', or 'C'.
         variables_of_interest (list, optional): A list of variable names to be analyzed.
-        variable_of_interest_data_types (list, optional): A list of data types for the variables of interest, either 'N', 'U', or 'C'.
+        variable_of_interest_data_type (list, optional): A list of data types for the variables of interest, either 'N', 'U', or 'C'.
         total_row (bool, default=False): Whether to include a row for all participants.
         total_column (bool, default=True): Whether to include a column for all participants.
         category_variable_suffix (str, optional): The suffix for the categorical variables (e.g., "n(%)")
