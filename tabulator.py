@@ -200,7 +200,7 @@ class Tabulator:
                         self.data[variable_of_interest], self.data[covariate]
                     )
                     result.iloc[row_index, col_index] = (
-                        f"pearson r: {r:.{self.decimal_places}f}"
+                        f"Pearson r: {r:.{self.decimal_places}f}"
                     )
                     # result.iloc[row_index-1, col_index+1] = self.format_p(p)
                     row_index += 1
@@ -211,7 +211,7 @@ class Tabulator:
                         nan_policy="omit",
                     )
                     result.iloc[row_index, col_index] = (
-                        f"spearman r: {r:.{self.decimal_places}f}"
+                        f"Spearman r: {r:.{self.decimal_places}f}"
                     )
                     # result.iloc[row_index-1, col_index+1] = self.format_p(p)
                     row_index += 1
