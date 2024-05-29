@@ -1,10 +1,19 @@
+import pandas as pd
+
+
 class Codebook(dict):
     """
     A dictionary-based class that represents a code-label mapping.
     """
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__()
+        if len(args) == 1 and isinstance(args[0], list):
+            for item in args[0]:
+                if isinstance(item, list):
+                    self.append(*item)
+                else:
+                    raise ValueError("Each item in the list must be a list.")
 
     def append(self, variable, variable_label, *code_label_pairs):
         """

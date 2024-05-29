@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 
+
 # For LaTeX output, refer to:
 # https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.to_latex.html
 # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_latex.html
@@ -38,7 +39,6 @@ def latex_output(
         position=None,
     )
     # Todo: This also works for regression table, where 'model 1' 'model 2' are the columns and 'beta' 'CI' are the first row.
-    # Todo: read codebook from xlsx
     lines = latex_table.split("\n")
     midrule_index = None
     for i, line in enumerate(lines):
