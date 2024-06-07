@@ -368,17 +368,18 @@ class Tabulator:
             )
             column_grouping.append(1)
 
-        for variable, variable_type in zip(
-            variables_of_interest, variable_of_interest_data_type
-        ):
-            report = self.calculate_variable_of_interest_columns(
-                covariates,
-                covariable_type,
-                variable,
-                variable_type,
-                len(result),
-                total_row,
-            )
-            result = pd.concat([result, report], axis=1)
-            column_grouping.append(report.shape[1])
+        if variables_of_interest is not None:
+            for variable, variable_type in zip(
+                variables_of_interest, variable_of_interest_data_type
+            ):
+                report = self.calculate_variable_of_interest_columns(
+                    covariates,
+                    covariable_type,
+                    variable,
+                    variable_type,
+                    len(result),
+                    total_row,
+                )
+                result = pd.concat([result, report], axis=1)
+                column_grouping.append(report.shape[1])
         return result, column_grouping
